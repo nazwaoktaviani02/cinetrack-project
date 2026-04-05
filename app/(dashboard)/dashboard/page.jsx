@@ -3,21 +3,21 @@
 
 import { useState, useEffect } from 'react';
 import KpiCard from '../../../components/ui/kpi-card';
-import dynamic from 'next/dynamic';
-// import MapInteraktif from '../../../components/dashboard/map-interaktif';
+// import dynamic from 'next/dynamic';
+import MapInteraktif from '../../../components/dashboard/map-interaktif';
 import GrafikOkupansi from '../../../components/dashboard/grafik-okupansi';
 
-const MapInteraktif = dynamic(
-  () => import('@/components/dashboard/map-interaktif'),
-  { 
-    ssr: false, // Ini kuncinya agar Vercel tidak menyentuhnya saat build!
-    loading: () => (
-      <div className="w-full h-[500px] bg-gray-50 animate-pulse flex items-center justify-center rounded-xl mt-4">
-        <span className="text-gray-400 font-medium">Memuat Peta...</span>
-      </div>
-    )
-  }
-);
+// const MapInteraktif = dynamic(
+//   () => import('@/components/MapInteraktif'),
+//   { 
+//     ssr: false, 
+//     loading: () => (
+//       <div className="w-full h-[500px] bg-gray-100 animate-pulse flex items-center justify-center rounded-xl mt-4">
+//         <span className="text-gray-400 font-medium">Memuat Peta...</span>
+//       </div>
+//     ) 
+//   }
+// );
 
 export default function DashboardPage() {
   const [summaryData, setSummaryData] = useState(null);
